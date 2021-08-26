@@ -13,7 +13,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'NoticesController@index')->name('index');
+Route::get('/', function() {return view('index')->with(['title' => 'Lista de noticias']);})->name('index');
 
 Route::prefix('notices')->name('notices.')->group(function() {
     Route::get('/create', 'NoticesController@create')->name('create');
