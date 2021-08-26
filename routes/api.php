@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::prefix('notices')->group(function() {
-    Route::get('/', 'NoticesController@index');
+    Route::get('/titles', 'NoticesController@getAllTitles');
     Route::get('/create', 'NoticesController@create');
     Route::get('/show/{id}', 'NoticesController@show');
     Route::post('/', 'NoticesController@store');

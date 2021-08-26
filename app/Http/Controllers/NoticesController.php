@@ -10,13 +10,13 @@ use Illuminate\Support\Facades\Storage;
 class NoticesController extends Controller
 {
     /**
-     * Display list of notices
+     * Get all titles
      * 
      * @return \Illuminate\Http\Response
      */
-    public function index() {
+    public function getAllTitles() {
 
-        $notices = Notice::all();
+        $notices = Notice::select('id', 'titulo')->get();
 
         // return view('index')->with(['notices' => $notices, 'title' => 'Lista de noticias']);
         return Response()->json($notices);
