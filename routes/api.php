@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,11 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::prefix('notices')->group(function() {
+    Route::get('/', 'NoticesController@index');
+    Route::get('/create', 'NoticesController@create');
+    Route::get('/show/{id}', 'NoticesController@show');
+    Route::post('/', 'NoticesController@store');
 });
