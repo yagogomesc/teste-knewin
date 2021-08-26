@@ -18,7 +18,8 @@ class NoticesController extends Controller
 
         $notices = Notice::all();
 
-        return view('index')->with(['notices' => $notices, 'title' => 'Lista de noticias']);
+        // return view('index')->with(['notices' => $notices, 'title' => 'Lista de noticias']);
+        return Response()->json($notices);
     }
 
     /**
