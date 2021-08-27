@@ -2,6 +2,14 @@
 
 Inclusão e Recuperação de documentos
 
+### Compilar assets/ instalar pacotes
+
+```
+    composer install
+    npm install
+    npm run dev
+```
+
 ### Faça uma cópia do arquivo `.env.example` para `.env`
 
 -   Altere as informações do banco de dados caso necessário.
@@ -21,12 +29,6 @@ Inclusão e Recuperação de documentos
 
 ```
     php artisan migrate
-```
-
-### Compilar assets
-
-```
-    npm run dev
 ```
 
 ### Iniciar o localhost
