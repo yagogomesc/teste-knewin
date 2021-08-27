@@ -38,17 +38,17 @@ class NoticesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeJson(Request $request)
     {
         try {
-            $file = storage_path() . "\app\\noticias.json";
-            $noticesJson = json_decode(file_get_contents($file),true);
-
-            foreach ($noticesJson as $item) {
+            $json = file_get_contents('php://input');
+            $formatJson = json_decode($json, true);
+   
+            foreach ($formatJson as $item) {
                 Notice::create($item);
             }
 
-            return redirect()->route('index')->with('success', 'Noticias inseridas com sucesso!');
+            return Response()->json(['status' => 200, 'message' => 'Notices registered']);
 
         } catch (\Exception $e) {
             return Response()->json([

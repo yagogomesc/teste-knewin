@@ -20,7 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::prefix('notices')->group(function() {
     Route::get('/titles', 'NoticesController@getAllTitles');
-    Route::get('/create', 'NoticesController@create');
     Route::get('/show/{id}', 'NoticesController@getSpecificNotice');
-    Route::post('/', 'NoticesController@store');
+    Route::post('/', 'NoticesController@storeJson');
 });
