@@ -6,7 +6,7 @@
 
 <form method="POST" action="/notices">
     @csrf
-    <a href="{{route('notices.create')}}" class="btn btn-primary col-2 ml-5 mt-5">Cadastrar noticia</a>
+    <a href="{{route('notices.create')}}" class="btn btn-primary col-2 ml-5 mt-5">Cadastrar noticias</a>
 </form>
 
 <section id="notices-list" class="card m-5 p-3 ">

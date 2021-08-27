@@ -18,5 +18,4 @@ Route::get('/', function() {return view('index')->with(['title' => 'Lista de not
 Route::prefix('notices')->name('notices.')->group(function() {
     Route::get('/create', 'NoticesController@create')->name('create');
     Route::get('/show/{id}', 'NoticesController@show')->name('show');
-    Route::post('/', 'NoticesController@store')->name('store');
 });

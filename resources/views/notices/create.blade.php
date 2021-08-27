@@ -10,6 +10,6 @@
         <label for="fileJson" class="form-label">Selecione o arquivo</label>
         <input class="form-control" name="arquivo" type="file" accept="application/json" id="fileJson">
     </div>
-    <button type="submit" id="submitFile" class="btn btn-primary">Submit</button>
+    <button type="submit" id="submitFile" class="btn btn-primary">Enviar</button>
 </section>
 @endsection
