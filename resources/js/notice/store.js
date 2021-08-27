@@ -16,7 +16,7 @@ document.getElementById("submitFile").addEventListener("click", function() {
             { headers: { "Content-Type": "application/json" } }
         );
 
-        console.log(response);
+        console.log(response.message);
     };
 
     fr.readAsText(files[0]);

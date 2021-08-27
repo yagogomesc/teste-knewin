@@ -27,7 +27,7 @@ if (noticeListContainer) {
                 noticeLinkElement.href = noticeLink + notice.id;
 
                 noticeLinkElement.innerText = notice.titulo;
-                console.log(noticeLinkElement);
+
                 listGroup.insertAdjacentHTML(
                     "beforeend",
                     noticeLinkElement.outerHTML

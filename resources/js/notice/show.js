@@ -46,6 +46,10 @@ if (noticeContainer) {
         published.innerText =
             "Publicado em: " + formattedDate.toLocaleString("pt-BR");
 
+        const textBody = document.createElement("p");
+        textBody.classList.add("lead", "text-start", "notice-content");
+        textBody.innerHTML = data.conteudo;
+
         noticeHeader.insertAdjacentHTML("beforeend", noticeTitle.outerHTML);
         noticeHeader.insertAdjacentHTML("beforeend", noticeSubtitle.outerHTML);
 
@@ -59,10 +63,6 @@ if (noticeContainer) {
         noticeContainer.insertAdjacentHTML("beforeend", fontText.outerHTML);
 
         noticeContainer.insertAdjacentHTML("beforeend", published.outerHTML);
-
-        const textBody = document.createElement("p");
-        textBody.classList.add("lead", "text-start", "notice-content");
-        textBody.innerHTML = data.conteudo;
 
         noticeContainer.insertAdjacentHTML("beforeend", textBody.outerHTML);
     };

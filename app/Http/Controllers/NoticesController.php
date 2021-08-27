@@ -53,7 +53,7 @@ class NoticesController extends Controller
         } catch (\Exception $e) {
             return Response()->json([
                 'status' => 401,
-                'codeError' => $e->getMessage(),
+                'message' => $e->getMessage(),
             ]);
         }
     }
