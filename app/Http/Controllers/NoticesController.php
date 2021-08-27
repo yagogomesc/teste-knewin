@@ -73,4 +73,20 @@ class NoticesController extends Controller
         
         return view('notices.show')->with(['title' => $notice->titulo,'notice' => $notice]);
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function getSpecificNotice($id)
+    {
+        $notice = Notice::find($id);
+
+        $notice->conteudo =  str_replace(array("\r", "\n"), "<br />", $notice->conteudo);
+        $notice->data_publicacao = new DateTime($notice->data_publicacao);
+
+        return Response()->json($notice);
+    }
 }
